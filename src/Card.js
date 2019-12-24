@@ -11,10 +11,8 @@ const Card = (props) => {
       <img className="card-avatar" src={`https://img.pokemondb.net/artwork/${name}.jpg`} alt="" />
       <div className="card-description">
         <h2>
-@
           {name}
         </h2>
-
       </div>
 
     </div>

@@ -1,8 +1,10 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import Card from './Card';
+import Pokeball from './pokeball.svg';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +14,6 @@ class App extends Component {
     super(props);
     this.state = {
       pokemons: [],
-      totalPokemon: 10,
       prevTotal: 0,
       scrolling: false,
       loading: false,
@@ -55,8 +56,7 @@ class App extends Component {
   loadMore = () => {
     this.setState(
       (prevState) => ({
-        totalPokemon: prevState.totalPokemon + 10,
-        prevTotal: prevState.totalPokemon,
+        prevTotal: prevState.prevTotal + 10,
       }),
       this.loadUsers,
     );
@@ -69,18 +69,19 @@ class App extends Component {
         <h1>Infinite Scroll</h1>
         <div className="container">
           <div className="cards">
-            {pokemons.map((pokemon) => (
+            {pokemons.map((pokemon, index) => (
               <Card
                 {...pokemon}
-                key={pokemon.id}
+                key={index}
               />
             ))}
 
           </div>
           {loading && (
             <div className="loading">
-              {' '}
-              <span>...loading</span>
+              <span>
+                <img src={Pokeball} className="pokeball" alt="" />
+              </span>
             </div>
           )}
         </div>
