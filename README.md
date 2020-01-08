@@ -1,8 +1,8 @@
-Click here [Demo](https://monzter50.github.io/poke-infinitescroll).
+Click here [Demo](https://monzter50.github.io/github-deploy).
 
 ## Practices Infinite Scroll
 
-Little project for test ReactJS
+Little project for test github pages
 
 ## Build Setup
 
